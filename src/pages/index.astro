@@ -1,8 +1,16 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import "../styles/global.css";
+
+const pageTitle = "Home Page";
 
 ---
 
 <html lang="en">
+	<style>
+	  h1 { color: red; }
+	  menu {}
+	</style>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -11,6 +19,17 @@
 		<title>Astro</title>
 	</head>
 	<body>
+		<button aria-expanded="false" aria-controls="main-menu" class="menu">
+</button>
 		<h1>Astro</h1>
+		<Navigation />
+		  <script>
+    const menu = document.querySelector('.menu');
+
+    menu?.addEventListener('click', () => {
+      const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+      menu.setAttribute('aria-expanded', `${!isExpanded}`);
+    });
+  </script>
 	</body>
 </html>
