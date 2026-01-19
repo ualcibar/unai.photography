@@ -43,7 +43,7 @@ onMount(() => {
 
 <!-- Curtain overlay -->
 <div class="curtain" class:open>
-  <button class="menu-btn" on:click={toggleMenu}>☰</button>
+  <button class="menu-btn" on:click={toggleMenu}>✕</button>
   <nav>
     <a href="/" on:click={closeMenu}>Home</a>
     <a href="/gallery" on:click={closeMenu}>Gallery</a>
@@ -78,8 +78,8 @@ header.hidden {
 .curtain {
   position: fixed;
   inset: 0;
-  background: linear-gradient(180deg, #111, #000);
-  transform: translateY(-100%);
+  background: linear-gradient(90deg, #111, #000);
+  transform: translateX(-100%);
   transition: transform 0.6s ease;
   z-index: 1000;
   display: grid;
@@ -88,7 +88,7 @@ header.hidden {
 
 /* When menu is open */
 .curtain.open {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 /* Menu links */
