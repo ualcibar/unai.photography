@@ -1,12 +1,19 @@
----
-import Navigation from '../components/Navigation.astro';
-import "../styles/global.css";
-
+--- 
+const background = "../images/DSCF8052.jpg";
 const pageTitle = "Home Page";
 
+
+import { Image } from "astro:assets";
+
+import Navigation from '../components/Navigation.astro';
+import "../styles/global.css";
+import backgroundIMage from "../images/background/DSCF8052.jpg";
+import Header from '../components/Header.svelte';
+
+
+
 ---
 
-<html lang="en">
 	<style>
 	  h1 { color: red; }
 	  menu {}
@@ -19,17 +26,44 @@ const pageTitle = "Home Page";
 		<title>Astro</title>
 	</head>
 	<body>
-		<button aria-expanded="false" aria-controls="main-menu" class="menu">
-</button>
-		<h1>Astro</h1>
-		<Navigation />
-		  <script>
-    const menu = document.querySelector('.menu');
+		<section class="hero">
+			<Image 
+    			src={backgroundIMage}
+    			alt="Background"
+    			width={1920}
+    			class="hero-bg"
+  			/>
 
-    menu?.addEventListener('click', () => {
-      const isExpanded = menu.getAttribute('aria-expanded') === 'true';
-      menu.setAttribute('aria-expanded', `${!isExpanded}`);
-    });
-  </script>
+  			<div class="hero-content">
+    			<h1>My Photography</h1>
+  			</div>
+		</section>
+		
+		<Header client:load />
+		<style>
+			.hero {
+			position: relative;
+			height: 100vh;
+			overflow: hidden;
+			}
+
+			.hero-bg {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
+			display: block;
+			}
+
+			.hero-content {
+			position: relative;
+			display: grid;
+			place-items: center;
+			height: 100%;
+			color: white;
+			font-size: 3rem;
+			}
+		</style>
 	</body>
-</html>
