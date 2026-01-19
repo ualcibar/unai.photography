@@ -8,12 +8,12 @@ import { Image } from "astro:assets";
 import Navigation from '../components/Navigation.astro';
 import "../styles/global.css";
 import backgroundIMage from "../images/background/DSCF8052.jpg";
+import Header from '../components/Header.svelte';
 
 
 
 ---
 
-<html lang="en">
 	<style>
 	  h1 { color: red; }
 	  menu {}
@@ -38,7 +38,8 @@ import backgroundIMage from "../images/background/DSCF8052.jpg";
     			<h1>My Photography</h1>
   			</div>
 		</section>
-
+		
+		<Header client:load />
 		<style>
 			.hero {
 			position: relative;
@@ -53,6 +54,7 @@ import backgroundIMage from "../images/background/DSCF8052.jpg";
 			height: 100%;
 			object-fit: cover;
 			z-index: -1;
+			display: block;
 			}
 
 			.hero-content {
@@ -65,4 +67,3 @@ import backgroundIMage from "../images/background/DSCF8052.jpg";
 			}
 		</style>
 	</body>
-</html>
