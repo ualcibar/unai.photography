@@ -39,9 +39,9 @@ onMount(() => {
 <header class:hidden>
   <button class="menu-btn" on:click={toggleMenu}>{open ? "✕" : "☰"}</button>
   <h1>{title}</h1>
-  <button class="menu-language">EUS</button>
+  <button class="menu-language">EUS</button> |
   <button class="menu-language">ES</button> |
-  <button class="menu-language">ENG</button> |
+  <button class="menu-language">ENG</button>
 </header>
 
 <!-- Curtain overlay -->
