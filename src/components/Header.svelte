@@ -2,7 +2,8 @@
   export let title = "Unai Alcibar-Arechuluaga";
   
   import { onMount } from "svelte";
-  
+
+  import { courtainImage } from "../images/background/DSCF6843.jpg";
   let open = false;
   let hidden = false;
   let lastScroll = 0;
@@ -51,8 +52,10 @@ onMount(() => {
     <a href="/gallery" on:click={closeMenu}>Proyects</a>
     <a href="/gallery" on:click={closeMenu}>Photo Diary</a>
     <a href="/about" on:click={closeMenu}>About Me</a>
+    <a href="/about" on:click={closeMenu}>Store</a>
     <a href="/contact" on:click={closeMenu}>Contact</a>
   </nav>
+  
 </div>
 
 
